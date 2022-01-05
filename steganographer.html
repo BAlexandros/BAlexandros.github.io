@@ -1,0 +1,57 @@
+---
+layout: page
+categories: projects
+permalink: "/projects/steganographer"
+title: "Steganographer"
+---
+
+<div style="text-align:justify">
+
+Steganographer is a command line program which hides one png
+image into another.
+
+<h4> Description </h4>
+
+<p>
+Steganography is the practice of concealing information in plain
+sight, within non-secret data. Its advantage to cryptography
+is that encrypted information is very obvious to the prying eye
+because of its unintelligible nature, whereas data hidden using
+steganography methods are less likely to arouse suspicion.
+</p>
+
+<p>
+This program allows the hiding of one image into another, as long
+as their file format is png.
+</p>
+
+<h4> Implementation </h4>
+
+<p>
+The program is written in C, and works as a command line tool.
+It uses <a href='http://www.libpng.org/pub/png/libpng.html'>libpng</a>
+to read and write the png files.
+
+Once the files are successfully loaded, the least significant bits of 
+the cover image are replaced by the most significant bits of the hidden
+image. The default number of bits is 4, which can be changed using the
+appropriate flag when calling the program.
+</p>
+<p>
+The process can be reversed, decrypting an image, using the appropriate
+flag. Of course, this results in loss of information, since a number
+of least significant bits was lost during the process of hiding.
+</p>
+<p>
+The tool was developed and works on Linux, and can be easily built 
+with the help of the <i>make</i> utility.
+</p>
+
+</div>
+<h4> Example </h4>
+
+The following example shows the image with both the cover and the 
+hidden information (left), and the extracted hidden information (right)
+
+<img src='{{site.baseurl}}/images/steganographerExample.png'
+     style='width:100%; object-fit:cover;'>
